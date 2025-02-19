@@ -27,7 +27,14 @@ def fetch_crypto_data(symbol="BTCUSDT", interval="1d", limit=500):
 
 # Fetch and save data
 if __name__ == "__main__":
-    df = fetch_crypto_data()
-    print(df.head())  # Display first 5 rows
-    df.to_csv("./data/btc_data.csv")  # Save to a CSV file for further analysis
-    print("Data saved to ./data/btc_data.csv")
+    # Fetch Bitcoin data
+    df_btc = fetch_crypto_data(symbol="BTCUSDT")
+    print(df_btc.head())  # Display first 5 rows of Bitcoin data
+    df_btc.to_csv("../data/btc_data.csv")  # Save Bitcoin data to a CSV file
+    print("Bitcoin data saved to ../data/btc_data.csv")
+
+    # Fetch Ethereum data
+    df_eth = fetch_crypto_data(symbol="ETHUSDT")
+    print(df_eth.head())  # Display first 5 rows of Ethereum data
+    df_eth.to_csv("../data/eth_data.csv")  # Save Ethereum data to a CSV file
+    print("Ethereum data saved to ../data/eth_data.csv")
